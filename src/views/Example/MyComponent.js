@@ -1,31 +1,59 @@
 import React from "react";
 
-class MyComponent extends React.Component{
-    
-    state = {
-        name: 'Phuoc',
-        age: '24'
-    }
+class MyComponent extends React.Component {
+  state = {
+    firstName: "",
+    lastName: "",
+  };
 
-    handleOnChange = (event) => {
-        this.setState({
-            name : event.target.value
-        })
-    }
+  handleFirstName = (event) => {
+    this.setState({
+      firstName: event.target.value,
+    });
+  };
 
-    render() { 
-        return(
-            <>
+  handleLastName = (event) => {
+    this.setState({
+      lastName: event.target.value,
+    });
+  };
 
-            <div className="first">hello First Component with Phuoc Dep Trai</div>
-            
-            <input value={this.state.name} type="Text" onChange={(event) => this.handleOnChange(event)}/>
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(">>> Check state:", this.state);
+  };
 
-            <div className="second">hello First Component with {this.state.name}</div>
-            
-            </>
-        )
-    }
+  render() {
+    console.log("State:", this.state);
+
+    return (
+      <>
+        <form>
+          <label htmlFor="fname">First name:</label>
+          <br />
+          <input
+            type="text"
+            value={this.state.firstName}
+            onChange={(event) => this.handleFirstName(event)}
+          />
+          <br />
+          <label htmlFor="lname">Last name:</label>
+          <br />
+          <input
+            type="text"
+            value={this.state.lastName}
+            onChange={(event) => this.handleLastName(event)}
+          />
+          <br />
+          <input
+            type="submit"
+            value="Submit"
+            onClick={(event) => this.handleSubmit(event)}
+          />
+        </form>
+      </>
+    );
+  }
 }
 
 export default MyComponent;
