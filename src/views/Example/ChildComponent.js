@@ -24,11 +24,10 @@ class ChildComponent extends React.Component {
         ) : (
           <>
             <div>
-              Build_In Component:
               {JobsInfo.map((item, index) => {
                 return (
                   <div key={item.id}>
-                    {item.title} --- {item.salary}
+                    {item.title} - {item.salary}
                   </div>
                 );
               })}

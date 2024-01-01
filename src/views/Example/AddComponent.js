@@ -22,7 +22,7 @@ class AddComponent extends React.Component {
     event.preventDefault();
 
     if (!this.state.title || !this.state.salary) {
-      alert("Missing require param");
+      alert("Missing require params");
     }
 
     console.log(">>> Check data input:", this.state);
