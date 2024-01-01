@@ -2,47 +2,42 @@ import React from "react";
 
 class ChildComponent extends React.Component {
   state = {
-    firstName: "",
-    lastName: "",
+    showJobs: false,
   };
 
-  handleFirstName = (event) => {
+  handleShowHide = () => {
     this.setState({
-      firstName: event.target.value,
+      showJobs: !this.state.showJobs,
     });
-  };
-
-  handleLastName = (event) => {
-    this.setState({
-      lastName: event.target.value,
-    });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(">>> Check props:", this.props);
   };
 
   render() {
-    console.log("Props:", this.props);
-
-    let { name, age, JobsInfo } = this.props;
+    let { showJobs } = this.state;
+    let { JobsInfo } = this.props;
 
     return (
       <>
-        <div className="first_child">
-          Child Component: {name} - {age}
-        </div>
-        <div className="second_child">
-          Build_In Component:
-          {JobsInfo.map((item, index) => {
-            return (
-              <div key={item.id}>
-                {item.title} --- {item.salary}
-              </div>
-            );
-          })}
-        </div>
+        {showJobs === false ? (
+          <div>
+            <button onClick={() => this.handleShowHide()}>Show</button>
+          </div>
+        ) : (
+          <>
+            <div className="second_child">
+              Build_In Component:
+              {JobsInfo.map((item, index) => {
+                return (
+                  <div key={item.id}>
+                    {item.title} --- {item.salary}
+                  </div>
+                );
+              })}
+            </div>
+            <div>
+              <button onClick={() => this.handleShowHide()}>Hide</button>
+            </div>
+          </>
+        )}
       </>
     );
   }
