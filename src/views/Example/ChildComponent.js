@@ -23,7 +23,7 @@ class ChildComponent extends React.Component {
           </div>
         ) : (
           <>
-            <div className="second_child">
+            <div>
               Build_In Component:
               {JobsInfo.map((item, index) => {
                 return (
