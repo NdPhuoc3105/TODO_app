@@ -1,0 +1,45 @@
+.todo-container{
+
+    margin: auto;
+    width: 90vh;
+    button{
+        cursor: pointer;
+    }
+
+    .add-todo{
+
+        height: 48px;
+    /* size: b4; */
+    margin: auto;
+    width: 71vh;
+
+        input{
+            width: 44vh;
+        }
+
+        .add{
+            margin: auto 10px;
+        }
+    }
+
+
+    .show-list-todo{        
+
+        .list{
+            height: 42px;
+            width: 70vh;
+            margin: 25px auto;
+            border-bottom: 1px solid;
+            display: flex;
+            justify-content: space-between;
+
+            .btn{
+                .edit{
+                    margin: auto 10px;
+                }
+    
+            }
+        }
+        
+    }
+}
