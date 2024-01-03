@@ -6,7 +6,7 @@ class ListTodo extends React.Component {
   state = {
     listTodo: [
       { id: "todo1", title: "Work At Home" },
-      { id: "todo2", title: "Watch Tivi" },
+      { id: "todo2", title: "Watch TV" },
       { id: "todo3", title: "play chess" },
     ],
     editTodo: {},
